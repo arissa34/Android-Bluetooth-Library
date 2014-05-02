@@ -53,6 +53,12 @@ Android Bluetooth Library
 }
 ```
 
+AndroidManifest.xml
+```java
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+```
+
 For documentation and additional information see [the website][1].
 
 Download
