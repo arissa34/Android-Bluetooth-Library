@@ -87,7 +87,7 @@ public abstract class BluetoothFragmentActivity extends FragmentActivity {
         mBluetoothManager.sendMessage(message);
     }
 
-    public abstract void onBluetoothDevice(BluetoothDevice device);
+    public abstract void onBluetoothDeviceFound(BluetoothDevice device);
     public abstract void onClientConnectionSuccess();
     public abstract void onClientConnectionFail();
     public abstract void onServeurConnectionSuccess();
@@ -97,7 +97,7 @@ public abstract class BluetoothFragmentActivity extends FragmentActivity {
     public abstract void onBluetoothNotAviable();
 
     public void onEventMainThread(BluetoothDevice device){
-        onBluetoothDevice(device);
+        onBluetoothDeviceFound(device);
     }
 
     public void onEventMainThread(ClientConnectionSuccess event){

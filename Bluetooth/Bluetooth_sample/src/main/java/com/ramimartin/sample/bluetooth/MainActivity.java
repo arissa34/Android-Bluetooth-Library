@@ -78,7 +78,7 @@ public class MainActivity extends BluetoothActivity {
     }
 
     @Override
-    public void onBluetoothDevice(BluetoothDevice device) {
+    public void onBluetoothDeviceFound(BluetoothDevice device) {
         setLogText("===> Device detected : " + device.getAddress());
         mEditText.setText(device.getAddress());
         mClientBtn.setEnabled(true);
