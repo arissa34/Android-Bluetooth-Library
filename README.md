@@ -57,7 +57,25 @@ For documentation and additional information see [the website][1].
 
 Download
 --------
-Download __[the latest JAR][2]__ or Gradle:
+Download __[the latest JAR][2]__  or grab via Maven:
+```xml
+  <dependencies>
+    <dependency>
+      <groupId>com.ramimartin.bluetooth</groupId>
+      <artifactId>AndroidBluetoothLibrary</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>arissa34-ftp</id>
+      <name>Arissa Ftp</name>
+      <url>http://arissa34.free.fr/maven2</url>
+    </repository>
+  </repositories>
+```
+or Gradle:
 ```groovy
 repositories {
     maven {
