@@ -8,8 +8,8 @@
         <option name="modules">
           <set>
             <option value="C:\Users\Rami MARTIN\Desktop\Perso\Bluetooth-Library\Bluetooth" />
-            <option value="C:\Users\Rami MARTIN\Desktop\Perso\Bluetooth-Library\Bluetooth\Bluetooth" />
             <option value="C:\Users\Rami MARTIN\Desktop\Perso\Bluetooth-Library\Bluetooth\Bluetooth_lib" />
+            <option value="C:\Users\Rami MARTIN\Desktop\Perso\Bluetooth-Library\Bluetooth\Bluetooth_sample" />
           </set>
         </option>
       </GradleProjectSettings>
