@@ -56,7 +56,7 @@ Android Bluetooth Library
 Download
 --------
 
-Download [the latest JAR][2]
+Download __[the latest JAR][2]__
 
 License
 -------
