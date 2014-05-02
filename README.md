@@ -52,12 +52,23 @@ Android Bluetooth Library
     }
 }
 ```
-
 Download
 --------
+Download __[the latest JAR][2]__ or Gradle:
+```groovy
+repositories {
+    maven {
+        url "http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/"
+        artifactUrls mavenLocal()
+    }
+    mavenCentral()
+}
 
-Download __[the latest JAR][2]__
-
+dependencies {
+    compile 'com.ramimartin.bluetooth:AndroidBluetoothLibrary:1.0.0-SNAPSHOT'
+}
+    
+```
 License
 -------
 
@@ -76,4 +87,4 @@ License
     limitations under the License.
     
     
-[2]: https://github.com/arissa34/Bluetooth-Library/blob/master/Bluetooth/Bluetooth_lib/jar/Bluetooth_library_v1.0.0.jar
+[2]: http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/1.0.0-SNAPSHOT/AndroidBluetoothLibrary-1.0.0-SNAPSHOT.jar
