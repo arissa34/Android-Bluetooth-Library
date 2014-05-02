@@ -52,12 +52,9 @@ Android Bluetooth Library
     }
 }
 ```
-
 Download
 --------
-
 Download __[the latest JAR][2]__ or grab via Maven:
-
 ```xml
 <dependency>
   <groupId>com.ramimartin.bluetooth</groupId>
@@ -65,7 +62,6 @@ Download __[the latest JAR][2]__ or grab via Maven:
   <version>1.0.0-SNAPSHOT</version>
 </dependency>
 ```
-
 or Gradle:
 ```groovy
 repositories {
@@ -81,7 +77,6 @@ dependencies {
 }
     
 ```
-
 License
 -------
 
