@@ -1,7 +1,7 @@
 Android Bluetooth Library
 =====================
 
-![ScreenShot](website/nexus_client.png)![ScreenShot](website/nexus_server.png)
+![ScreenShot](img/nexus_client.png)![ScreenShot](img/nexus_server.png)
 
 
 ```java
