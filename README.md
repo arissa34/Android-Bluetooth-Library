@@ -15,6 +15,7 @@ Android Bluetooth Library
     @Override
     protected void onStart() {
         super.onStart();
+        setUUID(UUID.fromString("00001101-0100-1000-8000-00805F9B34FB"));
         setTimeDiscoverable(200);
         startDiscovery();
     }
