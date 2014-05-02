@@ -52,6 +52,9 @@ Android Bluetooth Library
     }
 }
 ```
+
+For documentation and additional information see [the website][1].
+
 Download
 --------
 Download __[the latest JAR][2]__ or Gradle:
@@ -86,5 +89,5 @@ License
     See the License for the specific language governing permissions and
     limitations under the License.
     
-    
+[1]: http://arissa34.github.io/Android-Bluetooth-Library/
 [2]: http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/1.0.0-SNAPSHOT/AndroidBluetoothLibrary-1.0.0-SNAPSHOT.jar
