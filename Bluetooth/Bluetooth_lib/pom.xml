@@ -18,8 +18,13 @@
         <repository>
             <id>com.ramimartin.bluetooth</id>
             <name>AndroidBluetoothLibrary</name>
-            <url>https://github.com/arissa34/Android-Bluetooth-Library/tree/master/Bluetooth/Bluetooth_lib/target</url>
+            <url>file:${project.basedir}/target</url>
         </repository>
+        <!--<repository>
+            <id>com.ramimartin.bluetooth</id>
+            <name>AndroidBluetoothLibrary</name>
+            <url>https://github.com/arissa34/Android-Bluetooth-Library/tree/master/Bluetooth/Bluetooth_lib/target</url>
+        </repository>-->
     </distributionManagement>
 
     <dependencies>
