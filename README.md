@@ -24,7 +24,7 @@ Android Bluetooth Library
     }
 
     @Override
-    public void onBluetoothDevice(BluetoothDevice device) {
+    public void onBluetoothDeviceFound(BluetoothDevice device) {
     }
 
     @Override
