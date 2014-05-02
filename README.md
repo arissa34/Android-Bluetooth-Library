@@ -1,7 +1,8 @@
 Android Bluetooth Library
 =====================
 
-![ScreenShot](nexus4.png)
+![ScreenShot](nexus4.png)![ScreenShot](nexus4.png)
+
 
 
 License
