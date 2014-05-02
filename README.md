@@ -4,6 +4,10 @@ Android Bluetooth Library
 ![ScreenShot](nexus_client.png)![ScreenShot](nexus_server.png)
 
 
+Download
+--------
+
+Download [the latest JAR][2]
 
 License
 -------
@@ -29,3 +33,5 @@ License
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
+
+[2]: https://github.com/arissa34/Bluetooth-Library/blob/master/Bluetooth/Bluetooth_lib/jar/Bluetooth_library_v1.0.0.jar
