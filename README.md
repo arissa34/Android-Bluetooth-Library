@@ -54,15 +54,7 @@ Android Bluetooth Library
 ```
 Download
 --------
-Download __[the latest JAR][2]__ or grab via Maven:
-```xml
-<dependency>
-  <groupId>com.ramimartin.bluetooth</groupId>
-  <artifactId>AndroidBluetoothLibrary</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-</dependency>
-```
-or Gradle:
+Download __[the latest JAR][2]__ or Gradle:
 ```groovy
 repositories {
     maven {
