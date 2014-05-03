@@ -1,60 +1,34 @@
 Android Bluetooth Library
 =====================
 
-![ScreenShot](website/nexus_client.png)![ScreenShot](website/nexus_server.png)
+This library allows you to easily create a socket bluetooth connection for two android devices with one server and one client. This library is compatible with the Android SDK 2.3 to 4.4.
+
+![ScreenShot](img/nexus_client.png)![ScreenShot](img/nexus_server.png)
 
 
-```java
- public class MainActivity extends BluetoothActivity {
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+For documentation and additional information see [the website][1].
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        setTimeDiscoverable(200);
-        startDiscovery();
-    }
-
-    @Override
-    public void onBluetoothStartDiscovery() {
-    }
-
-    @Override
-    public void onBluetoothDeviceFound(BluetoothDevice device) {
-    }
-
-    @Override
-    public void onClientConnectionSuccess() {
-    }
-
-    @Override
-    public void onClientConnectionFail() {
-    }
-
-    @Override
-    public void onServeurConnectionSuccess() {
-    }
-
-    @Override
-    public void onServeurConnectionFail() {
-    }
-
-    @Override
-    public void onBluetoothCommunicator(String messageReceive) {
-    }
-
-    @Override
-    public void onBluetoothNotAviable() {
-    }
-}
-```
 Download
 --------
-Download __[the latest JAR][2]__ or Gradle:
+Download __[the latest JAR][2]__  or grab via Maven:
+```xml
+  <dependencies>
+    <dependency>
+      <groupId>com.ramimartin.bluetooth</groupId>
+      <artifactId>AndroidBluetoothLibrary</artifactId>
+      <version>1.0.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>arissa34-ftp</id>
+      <name>Arissa Ftp</name>
+      <url>http://arissa34.free.fr/maven2</url>
+    </repository>
+  </repositories>
+```
+or Gradle:
 ```groovy
 repositories {
     maven {
@@ -65,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.ramimartin.bluetooth:AndroidBluetoothLibrary:1.0.0-SNAPSHOT'
+    compile 'com.ramimartin.bluetooth:AndroidBluetoothLibrary:1.0.1-SNAPSHOT'
 }
     
 ```
@@ -86,5 +60,5 @@ License
     See the License for the specific language governing permissions and
     limitations under the License.
     
-    
-[2]: http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/1.0.0-SNAPSHOT/AndroidBluetoothLibrary-1.0.0-SNAPSHOT.jar
+[1]: http://arissa34.github.io/Android-Bluetooth-Library/
+[2]: http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/1.0.1-SNAPSHOT/AndroidBluetoothLibrary-1.0.1-20140503.130306-1.jar
