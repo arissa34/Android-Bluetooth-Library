@@ -16,7 +16,7 @@ Download __[the latest JAR][2]__  or grab via Maven:
     <dependency>
       <groupId>com.ramimartin.bluetooth</groupId>
       <artifactId>AndroidBluetoothLibrary</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>1.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.ramimartin.bluetooth:AndroidBluetoothLibrary:1.0.0-SNAPSHOT'
+    compile 'com.ramimartin.bluetooth:AndroidBluetoothLibrary:1.0.1-SNAPSHOT'
 }
     
 ```
