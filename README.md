@@ -32,7 +32,7 @@ or Gradle:
 ```groovy
 repositories {
     maven {
-        url "http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/"
+        url "http://arissa34.free.fr/maven2/"
         artifactUrls mavenLocal()
     }
     mavenCentral()
