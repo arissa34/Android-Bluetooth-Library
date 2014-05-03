@@ -4,66 +4,6 @@ Android Bluetooth Library
 ![ScreenShot](img/nexus_client.png)![ScreenShot](img/nexus_server.png)
 
 
-```java
- public class MainActivity extends BluetoothActivity {
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        setTimeDiscoverable(200);
-        startDiscovery();
-    }
-
-    @Override
-    public UUID myUUID() {
-        return UUID.fromString("00001101-0100-1000-8000-00805F9B34FB");
-    }
-    
-    @Override
-    public void onBluetoothStartDiscovery() {
-    }
-
-    @Override
-    public void onBluetoothDeviceFound(BluetoothDevice device) {
-    }
-
-    @Override
-    public void onClientConnectionSuccess() {
-    }
-
-    @Override
-    public void onClientConnectionFail() {
-    }
-
-    @Override
-    public void onServeurConnectionSuccess() {
-    }
-
-    @Override
-    public void onServeurConnectionFail() {
-    }
-
-    @Override
-    public void onBluetoothCommunicator(String messageReceive) {
-    }
-
-    @Override
-    public void onBluetoothNotAviable() {
-    }
-}
-```
-
-AndroidManifest.xml
-```java
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-```
-
 For documentation and additional information see [the website][1].
 
 Download
