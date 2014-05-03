@@ -25,8 +25,6 @@ public class BluetoothManager extends BroadcastReceiver {
         Server;
     }
 
-    private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
-
     public static final int REQUEST_DISCOVERABLE_CODE = 114;
 
     public static int BLUETOOTH_REQUEST_ACCEPTED;
@@ -41,6 +39,7 @@ public class BluetoothManager extends BroadcastReceiver {
     private BluetoothClient mBluetoothClient;
     private BluetoothServer mBluetoothServer;
 
+    private UUID mUUID = null;
     private TypeBluetooth mType;
     private int mTimeDiscoverable;
     public boolean isConnected;
@@ -56,6 +55,10 @@ public class BluetoothManager extends BroadcastReceiver {
         mBluetoothIsEnableOnStart = mBluetoothAdapter.isEnabled();
         isConnected = false;
         setTimeDiscoverable(BLUETOOTH_TIME_DICOVERY_300_SEC);
+    }
+
+    public void setUUID(UUID uuid){
+        mUUID = uuid;
     }
 
     public void setTimeDiscoverable(int timeInSec){
@@ -82,6 +85,10 @@ public class BluetoothManager extends BroadcastReceiver {
     }
 
     public void startDiscovery() {
+        if(mUUID == null){
+            Log.e("", "YOUR UUID IS NULL !!");
+            return;
+        }
         if (mBluetoothAdapter == null) {
             return;
         } else {
@@ -107,13 +114,13 @@ public class BluetoothManager extends BroadcastReceiver {
         mType = TypeBluetooth.Client;
         IntentFilter bondStateIntent = new IntentFilter(BluetoothDevice.ACTION_BOND_STATE_CHANGED);
         mActivity.registerReceiver(this, bondStateIntent);
-        mBluetoothClient = new BluetoothClient(mBluetoothAdapter, MY_UUID, addressMac);
+        mBluetoothClient = new BluetoothClient(mBluetoothAdapter, mUUID, addressMac);
         new Thread(mBluetoothClient).start();
     }
 
     public void createServeur(){
         mType = TypeBluetooth.Server;
-        mBluetoothServer = new BluetoothServer(mBluetoothAdapter, MY_UUID);
+        mBluetoothServer = new BluetoothServer(mBluetoothAdapter, mUUID);
         new Thread(mBluetoothServer).start();
         IntentFilter bondStateIntent = new IntentFilter(BluetoothDevice.ACTION_BOND_STATE_CHANGED);
         mActivity.registerReceiver(this, bondStateIntent);

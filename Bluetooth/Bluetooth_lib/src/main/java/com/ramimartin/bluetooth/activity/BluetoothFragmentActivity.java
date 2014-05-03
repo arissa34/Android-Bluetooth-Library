@@ -13,6 +13,8 @@ import com.ramimartin.bluetooth.bus.ClientConnectionSuccess;
 import com.ramimartin.bluetooth.bus.ServeurConnectionFail;
 import com.ramimartin.bluetooth.bus.ServeurConnectionSuccess;
 
+import java.util.UUID;
+
 import de.greenrobot.event.EventBus;
 
 /**
@@ -34,6 +36,7 @@ public abstract class BluetoothFragmentActivity extends FragmentActivity {
         super.onStart();
         if(!EventBus.getDefault().isRegistered(this))
         EventBus.getDefault().register(this);
+        mBluetoothManager.setUUID(myUUID());
     }
 
     @Override
@@ -87,6 +90,7 @@ public abstract class BluetoothFragmentActivity extends FragmentActivity {
         mBluetoothManager.sendMessage(message);
     }
 
+    public abstract UUID myUUID();
     public abstract void onBluetoothDeviceFound(BluetoothDevice device);
     public abstract void onClientConnectionSuccess();
     public abstract void onClientConnectionFail();

@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.ramimartin.bluetooth.activity.BluetoothActivity;
 
+import java.util.UUID;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -36,6 +38,16 @@ public class MainActivity extends BluetoothActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public UUID myUUID() {
+        return UUID.fromString("c47914a1-c8a2-45f0-a900-bc686b9328ab");
     }
 
     @OnClick(R.id.discovery)

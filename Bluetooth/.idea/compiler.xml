@@ -23,6 +23,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="Bluetooth_lib" />
+        <module name="Bluetooth_sample" />
       </profile>
     </annotationProcessing>
   </component>
