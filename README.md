@@ -61,4 +61,4 @@ License
     limitations under the License.
     
 [1]: http://arissa34.github.io/Android-Bluetooth-Library/
-[2]: http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/1.0.0-SNAPSHOT/AndroidBluetoothLibrary-1.0.0-SNAPSHOT.jar
+[2]: http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/1.0.1-SNAPSHOT/AndroidBluetoothLibrary-1.0.1-20140503.130306-1.jar
