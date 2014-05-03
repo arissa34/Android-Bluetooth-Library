@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>ramimartin.github.io by arissa34</title>
+    <title>Android Bluetooth Library by Rami Martin</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link href="stylesheets/prettify.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="javascripts/respond.js"></script>
     <!--[if lt IE 9]>
@@ -28,51 +29,156 @@
       </div><!-- end header -->
 
     <div class="wrapper">
-
+      <img src="images/rami_logo.png">
       <section>
         <div id="title">
-          <h1>ramimartin.github.io</h1>
-          <p>Bluetooth Library</p>
+          <h1>Android Bluetooth Library</h1>
+          <p></p>
           <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/arissa34">arissa34</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+          <span class="credits left">Project maintained by <a href="https://github.com/arissa34">Rami Martin</a></span>
         </div>
 
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Introduction</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>This library allows you to easily create a socket bluetooth connection for two android devices with one server and one client. This library is compatible with the Android SDK 2.3 to 4.4.</p>
+<div style="text-align: center">
+          <img src="images/nexus_client.png">
+          <img src="images/nexus_server.png"></div>
+		<p></p>  
+<p>Simple implementation with extended BluetoothActivity or FragmentActivity.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<pre class="prettyprint"><code>public class MainActivity extends BluetoothActivity {
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setTimeDiscoverable(200);
+        startDiscovery();
+    }
+
+    @Override
+    public UUID myUUID() {
+        return UUID.fromString("00001101-0100-1000-8000-00805F9B34FB");
+    }
+
+    @Override
+    public void onBluetoothStartDiscovery() {
+    }
+
+    @Override
+    public void onBluetoothDeviceFound(BluetoothDevice device) {
+    }
+
+    @Override
+    public void onClientConnectionSuccess() {
+    }
+
+    @Override
+    public void onClientConnectionFail() {
+    }
+
+    @Override
+    public void onServeurConnectionSuccess() {
+    }
+
+    @Override
+    public void onServeurConnectionFail() {
+    }
+
+    @Override
+    public void onBluetoothCommunicator(String messageReceive) {
+    }
+
+    @Override
+    public void onBluetoothNotAviable() {
+    }
+}</code></pre>
+
+<p>You can also extend your fragment with BluetoothFragment. <b>Don't forget to past the activity result from your activity to your fragment</b>.</p>
+
+<h4>UUID</h4>
+<p>You can generate your own UUID on this <a href="http://www.famkruithof.net/uuid/uuidgen">website</a></p>
+
+<h4>AndroidManifest.xml</h4>
+<pre class="prettyprint"><code>&lt;uses-permission android:name="android.permission.BLUETOOTH"/>
+&lt;uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/></pre></code>
+
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Download</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<li class="downloads"><a href="http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/1.0.1-SNAPSHOT/AndroidBluetoothLibrary-1.0.1-20140503.130306-1.jar">Android Bluetooth Library V1.0.1 JAR</a></li>
+<br>
+<p>The source code to the library and sample application as well as this website is <a href="https://github.com/arissa34/Android-Bluetooth-Library">available on GitHub</a>.</p>
+<h4>MAVEN</h4>
+<p>If you are using Maven for compilation you can declare the library as a dependency.</p>
+<pre class="prettyprint"><code>&lt;dependencies>
+    &lt;dependency>
+      &lt;groupId>com.ramimartin.bluetooth&lt;/groupId>
+      &lt;artifactId>AndroidBluetoothLibrary&lt;/artifactId>
+      &lt;version>1.0.1-SNAPSHOT&lt;/version>
+    &lt;/dependency>
+  &lt;/dependencies>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+  &lt;repositories>
+    &lt;repository>
+      &lt;id>arissa34-ftp&lt;/id>
+      &lt;name>Arissa Ftp&lt;/name>
+      &lt;url>http://arissa34.free.fr/maven2&lt;/url>
+    &lt;/repository>
+  &lt;/repositories></code></pre>
+<h4>GRADLE</h4>
+<pre class="prettyprint"><code>repositories {
+    maven {
+        url "http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/"
+        artifactUrls mavenLocal()
+    }
+    mavenCentral()
+}
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+dependencies {
+    compile 'com.ramimartin.bluetooth:AndroidBluetoothLibrary:1.0.1-SNAPSHOT'
+}</code></pre>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<h3><a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Features</h3>
+<p>This library is used in these applications :</p>
+<li >
+<p><a href="https://play.google.com/store/apps/details?id=com.rami.puissance4">Connect 4</a></p>
+</li>
+<h3><a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>License</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+ <pre class="license">Copyright 2014 Rami Martin
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</pre>
 
 <h3>
 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>If you have any questions please feel free to contact me at this email address : <a href="mailto:support@github.com">rami.34000@gmail.com</a></p>
       </section>
 
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+	<script src="javascripts/prettify.js"></script>
+    <script>
+      prettyPrint();
+    </script>
   </body>
 </html>
