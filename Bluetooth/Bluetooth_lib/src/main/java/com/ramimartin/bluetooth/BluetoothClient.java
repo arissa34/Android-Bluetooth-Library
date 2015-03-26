@@ -104,12 +104,16 @@ public class BluetoothClient implements Runnable {
         }
     }
 
-    public void onDestroy() {
+    public void closeConnexion() {
         if (mSocket != null) {
             try {
                 mInputStream.close();
+                mInputStream = null;
                 mOutputStreamWriter.close();
+                mOutputStreamWriter = null;
                 mSocket.close();
+                mSocket = null;
+                mBluetoothConnector.close();
             } catch (Exception e) {
             }
             CONTINUE_READ_WRITE = false;

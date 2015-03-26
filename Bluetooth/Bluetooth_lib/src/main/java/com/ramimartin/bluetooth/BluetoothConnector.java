@@ -95,6 +95,16 @@ public class BluetoothConnector {
         return true;
     }
 
+    public void close(){
+        if(bluetoothSocket != null){
+            try {
+                bluetoothSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static interface BluetoothSocketWrapper {
 
         InputStream getInputStream() throws IOException;

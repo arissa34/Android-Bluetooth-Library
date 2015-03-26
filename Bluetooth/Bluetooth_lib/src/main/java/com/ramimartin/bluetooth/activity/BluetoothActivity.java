@@ -43,7 +43,7 @@ public abstract class BluetoothActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
-        mBluetoothManager.onDestroy();
+        closeAllConnexion();
     }
 
     @Override
@@ -56,6 +56,10 @@ public abstract class BluetoothActivity extends Activity {
             } else {
             }
         }
+    }
+
+    public void closeAllConnexion(){
+        mBluetoothManager.closeAllConnexion();
     }
 
     public void checkBluetoothAviability(){
@@ -110,6 +114,7 @@ public abstract class BluetoothActivity extends Activity {
     public void onEventMainThread(ClientConnectionFail event){
         mBluetoothManager.isConnected = false;
         onClientConnectionFail();
+        mBluetoothManager.resetClient();
     }
 
     public void onEventMainThread(ServeurConnectionSuccess event){
@@ -120,6 +125,7 @@ public abstract class BluetoothActivity extends Activity {
     public void onEventMainThread(ServeurConnectionFail event){
         mBluetoothManager.isConnected = false;
         onServeurConnectionFail();
+        mBluetoothManager.resetServer();
     }
 
     public void onEventMainThread(BluetoothCommunicator event){

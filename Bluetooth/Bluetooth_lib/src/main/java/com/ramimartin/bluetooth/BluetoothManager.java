@@ -92,8 +92,10 @@ public class BluetoothManager extends BroadcastReceiver {
         if (mBluetoothAdapter == null) {
             return;
         } else {
-            Log.e(""," ==> mBluetoothAdapter.isEnabled() : "+mBluetoothAdapter.isEnabled());
-            Log.e(""," ==> mBluetoothAdapter.isDiscovering() : "+mBluetoothAdapter.isDiscovering());
+            if(BuildConfig.DEBUG) {
+                Log.e("", " ==> mBluetoothAdapter.isEnabled() : " + mBluetoothAdapter.isEnabled());
+                Log.e("", " ==> mBluetoothAdapter.isDiscovering() : " + mBluetoothAdapter.isDiscovering());
+            }
             if (mBluetoothAdapter.isEnabled() && mBluetoothAdapter.isDiscovering()) {
                 return;
             } else {
@@ -158,7 +160,24 @@ public class BluetoothManager extends BroadcastReceiver {
         }
     }
 
-    public void onDestroy(){
+    public void resetServer(){
+        if(mType == TypeBluetooth.Server && mBluetoothServer != null){
+            mBluetoothServer.closeConnexion();
+            mBluetoothServer = null;
+        }
+    }
+
+    public void resetClient(){
+        if(mType == TypeBluetooth.Client && mBluetoothClient != null){
+            mBluetoothClient.closeConnexion();
+            mBluetoothClient = null;
+        }
+    }
+
+    public void closeAllConnexion(){
+        if(BuildConfig.DEBUG){
+            Log.e("","===> Bluetooth Lib Destroy");
+        }
         try{
             mActivity.unregisterReceiver(this);
         }catch(Exception e){}
@@ -169,12 +188,11 @@ public class BluetoothManager extends BroadcastReceiver {
             mBluetoothAdapter.disable();
         }
 
+        mBluetoothAdapter = null;
+
         if(mType != null){
-            if(mType == TypeBluetooth.Server && mBluetoothServer != null){
-                mBluetoothServer.onDestroy();
-            }else if(mType == TypeBluetooth.Client && mBluetoothClient != null){
-                mBluetoothClient.onDestroy();
-            }
+            resetServer();
+            resetClient();
         }
     }
 }

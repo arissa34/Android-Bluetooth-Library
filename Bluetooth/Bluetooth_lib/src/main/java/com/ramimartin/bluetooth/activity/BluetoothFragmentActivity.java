@@ -43,7 +43,7 @@ public abstract class BluetoothFragmentActivity extends FragmentActivity {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
-        mBluetoothManager.onDestroy();
+        closeAllConnexion();
     }
 
     @Override
@@ -58,6 +58,10 @@ public abstract class BluetoothFragmentActivity extends FragmentActivity {
                 finish();
             }
         }
+    }
+
+    public void closeAllConnexion(){
+        mBluetoothManager.closeAllConnexion();
     }
 
     public void checkBluetoothAviability(){
