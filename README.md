@@ -3,7 +3,7 @@ Android Bluetooth Library
 
 This library allows you to easily create a socket bluetooth connection for two android devices with one server and one client. This library is compatible with the Android SDK 2.3 to 5.1.
 
-![ScreenShot](img/nexus_client.png)![ScreenShot](img/nexus_server.png)
+![ScreenShot](http://arissa34.github.io/Android-Bluetooth-Library/images/nexus_client.png)![ScreenShot](http://arissa34.github.io/Android-Bluetooth-Library/images/nexus_server.png)
 
 
 For documentation and additional information see [the website][1].
