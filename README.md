@@ -7,10 +7,11 @@ This library allows you to easily create a socket bluetooth connection for two a
 
 
 For documentation and additional information see [the website][1].
+For multiple bluetooth connection you can see this lib [the website][2].
 
 Download
 --------
-Download __[the latest JAR][2]__  or grab via Maven:
+Download __[the latest JAR][3]__  or grab via Maven:
 ```xml
   <dependencies>
     <dependency>
@@ -61,4 +62,5 @@ License
     limitations under the License.
     
 [1]: http://arissa34.github.io/Android-Bluetooth-Library/
-[2]: http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/1.0.1-SNAPSHOT/AndroidBluetoothLibrary-1.0.1-20140503.130306-1.jar
+[2]: http://arissa34.github.io/Android-Multi-Bluetooth-Library/
+[3]: http://arissa34.free.fr/maven2/com/ramimartin/bluetooth/AndroidBluetoothLibrary/1.0.1-SNAPSHOT/AndroidBluetoothLibrary-1.0.1-20140503.130306-1.jar
