@@ -7,6 +7,7 @@ This library allows you to easily create a socket bluetooth connection for two a
 
 
 For documentation and additional information see [the website][1].
+
 For multiple bluetooth connection you can see this lib [the website][2].
 
 Download
